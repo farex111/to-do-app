@@ -1,0 +1,15 @@
+<div class="d-flex justify-content-between align-items-center item">
+  <div class="info">
+    <p class="pb-2">{{getNewTask.task}}</p>
+    <span class="badge"
+      [ngClass]="
+      getNewTask.difficulty == 'easy' ? 'bg-success' :
+      getNewTask.difficulty == 'medium' ? 'bg-primary' : ' bg-danger'">
+      {{getNewTask.difficulty}}
+    </span>
+  </div>
+  <div class="buttons">
+    <button (click)="onDeleteBtnClick()" class="btn btn-danger me-2">Delete</button>
+    <button (click)="onMoveToProgress()" class="btn btn-primary">Move</button>
+  </div>
+</div>

@@ -1,1 +1,30 @@
-<p>add-task works!</p>
+<div class="row p-4">
+  <div class="col-md" *ngIf="!showForm">
+    <button (click)="clickShowForm()" class="btn btn-primary">Add New Task</button>
+  </div>
+  <form action="" [formGroup]="addTaskForm">
+    <div class="row align-items-center" *ngIf="showForm">
+      <div class="col-md">
+        <div class="form-floating">
+          <input type="text" formControlName="task" class="form-control" id="floatingInputGrid"
+                 placeholder="name@example.com">
+          <label for="floatingInputGrid">Enter Your Task</label>
+        </div>
+      </div>
+      <div class="col-md">
+        <div class="form-floating">
+          <select class="form-select" formControlName="difficulty" id="floatingSelectGrid"
+                  aria-label="Floating label select">
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+          </select>
+          <label for="floatingSelectGrid">Works with selects</label>
+        </div>
+      </div>
+      <div class="col-md">
+        <button [disabled]="!addTaskForm.controls['task'].value" (click)="onAddNewTask()" class="btn btn-primary">Add</button>
+      </div>
+    </div>
+  </form>
+</div>
