@@ -1,0 +1,15 @@
+<div class="d-flex justify-content-between align-items-center item">
+  <div class="info">
+    <p class="pb-2">{{getNewTodo.task}}</p>
+    <span class="badge"
+          [ngClass]="
+      getNewTodo.difficulty == 'easy' ? 'bg-success' :
+      getNewTodo.difficulty == 'medium' ? 'bg-primary' : ' bg-danger'">
+      {{getNewTodo.difficulty}}
+    </span>
+  </div>
+  <div class="buttons">
+    <button (click)="onBackToTodo()" class="btn btn-primary me-2">Back</button>
+    <button (click)="OnSendToDone()" class="btn btn-success">Next</button>
+  </div>
+</div>
